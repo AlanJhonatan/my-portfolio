@@ -22,7 +22,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
+          <div className={styles.social}>
             <p>You can also find me on <a href="https://www.linkedin.com/in/alanjhonatan/">LinkedIn</a> and <a href="https://github.com/alanjhonatan">Github</a> ! 👋</p>
           </div>
 
