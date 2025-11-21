@@ -1,7 +1,7 @@
 'use client'
 
 import { ExperiencesSection } from '@/features/home/components/experiences-section';
-import Summary from '@/markdown/summary.md';
+import { SummarySection } from '@/features/home/components/summary-section';
 import { Avatar, Box, Card, Container, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
                 </Box>
               </HStack>
               <Box marginTop={6}>
-                <Summary />
+                <SummarySection />
               </Box>
             </Card.Root>
           </Box>
@@ -41,6 +41,10 @@ export default function Home() {
             <ExperiencesSection />
           </Flex>
         </VStack>
+
+        <Flex align={'center'} justify={'center'} mb={6}>
+          <Text color={'fg.subtle'}>Made with Next.js, Chakra UI and 💖</Text>
+        </Flex>
       </Container>
     </Box>
   )
