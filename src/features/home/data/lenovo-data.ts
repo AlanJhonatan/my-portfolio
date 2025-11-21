@@ -9,5 +9,9 @@ export const useLenovoData: () => ExperienceType = () => ({
         role: 'Software Engineer (Junior promoted from Intern)',
         period: 'February 2021 - June 2022'
     },
-    logoPath: '/lenovo-logo.jpg'
+    image: {
+        path: '/lenovo-logo.jpg',
+        alt: 'Lenovo',
+    },
+    webpage: 'https://www.lenovo.com/',
 })

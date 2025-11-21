@@ -9,5 +9,9 @@ export const useSeipData: () => ExperienceType = () => ({
         role: 'Full Stack Developer (Intern)',
         period: 'April 2019 - December 2019'
     },
-    logoPath: '/seip7-logo.jpg'
+    image: {
+        path: '/seip7-logo.jpg',
+        alt: 'SEIP7',
+    },
+    webpage: 'https://www.seip7.com/',
 })

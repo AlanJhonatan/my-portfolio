@@ -9,5 +9,9 @@ export const useSmilesData: () => ExperienceType = () => ({
         role: 'Senior Full Stack Developer',
         period: 'June 2023 - November 2025'
     },
-    logoPath: '/gol-airlines-logo.png'
+    image: {
+        path: '/gol-airlines-logo.png',
+        alt: 'Smiles',
+    },
+    webpage: 'https://www.smiles.com/'
 })
