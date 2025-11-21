@@ -9,5 +9,9 @@ export const useGftData: () => ExperienceType = () => ({
         role: 'Mid-Level Full Stack Developer',
         period: 'June 2022 - June 2023'
     },
-    logoPath: '/gft-group-logo.png',
+    image: {
+        path: '/gft-group-logo.png',
+        alt: 'GFT'
+    },
+    webpage: 'https://www.gft.com/br/pt/'
 })

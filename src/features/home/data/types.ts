@@ -13,5 +13,9 @@ interface ExperienceDialogType {
 interface ExperienceType {
     card: ExperienceCardType,
     dialog: ExperienceDialogType,
-    logoPath: string
+    image: {
+        path: string,
+        alt: string,
+    },
+    webpage: string,
 }
