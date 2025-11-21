@@ -1,6 +1,10 @@
+import { GFTDialogConsumer } from "@/components/dialogs/gft/consumer";
+import { LenovoDialogConsumer } from "@/components/dialogs/lenovo/consumer";
+import { SeipDialogConsumer } from "@/components/dialogs/seip/consumer";
+import { SmilesDialogConsumer } from "@/components/dialogs/smiles/consumer";
+import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +30,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Provider>
-        {children}
+          {children}
+
+          <SmilesDialogConsumer />
+          <GFTDialogConsumer />
+          <LenovoDialogConsumer />
+          <SeipDialogConsumer />
         </Provider>
       </body>
     </html>
