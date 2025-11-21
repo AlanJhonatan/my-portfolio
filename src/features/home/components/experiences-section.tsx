@@ -2,7 +2,9 @@ import { useGFTDialog } from "@/components/dialogs/gft/store";
 import { useLenovoDialog } from "@/components/dialogs/lenovo/store";
 import { useSeipDialog } from "@/components/dialogs/seip/store";
 import { useSmilesDialog } from "@/components/dialogs/smiles/store";
-import { Avatar, Button, Card, Grid } from "@chakra-ui/react";
+import { Avatar, Box, Button, Card, Flex, Grid } from "@chakra-ui/react";
+import Link from "next/link";
+import { LuExternalLink } from "react-icons/lu";
 import { useGftData } from "../data/gft-data";
 import { useLenovoData } from "../data/lenovo-data";
 import { useSeipData } from "../data/seip-data";
@@ -37,10 +39,20 @@ export function ExperiencesSection() {
                 experiencesData.map((experience, idx) => (
                     <Card.Root key={experience.card.title} maxWidth={{ sm: '100%', md: '100%', lg: '300px' }} >
                         <Card.Body gap="2">
-                            <Avatar.Root size="lg" shape="rounded">
-                                <Avatar.Image src={experience.logoPath} objectFit={'cover'} />
-                                <Avatar.Fallback name="Gol" />
-                            </Avatar.Root>
+                            <Flex direction={'row'} justify={'space-between'} align={'center'}>
+                                <Box>
+                                    <Avatar.Root size="lg" shape="rounded">
+                                        <Avatar.Image src={experience.image.path} objectFit={'cover'} />
+                                        <Avatar.Fallback name={experience.image.alt} />
+                                    </Avatar.Root>
+                                </Box>
+
+                                <Box>
+                                    <Link href={experience.webpage} target="_blank" color="gray.400">
+                                        <LuExternalLink />
+                                    </Link>
+                                </Box>
+                            </Flex>
                             <Card.Title mt="2">{experience.card.title}</Card.Title>
                             <Card.Description>
                                 <strong>{experience.card.descriptionTitle}</strong>
@@ -56,66 +68,6 @@ export function ExperiencesSection() {
                     </Card.Root>
                 ))
             }
-
-            {/* <Card.Root maxWidth={{ sm: '100%', md: '100%', lg: '300px' }}>
-                <Card.Body gap="2">
-                    <Avatar.Root size="lg" shape="rounded">
-                        <Avatar.Image src="/gft-group-logo.png" objectFit={'cover'} />
-                        <Avatar.Fallback name="GFT" />
-                    </Avatar.Root>
-                    <Card.Title mt="2">{gftCard.title}</Card.Title>
-                    <Card.Description>
-                        <strong>{gftCard.descriptionTitle}</strong>
-                    </Card.Description>
-                    <Card.Description>
-                        {gftCard.description}
-                    </Card.Description>
-                </Card.Body>
-
-                <Card.Footer justifyContent="flex-end">
-                    <Button onClick={() => gftDialogOpen(true)}>Read more</Button>
-                </Card.Footer>
-            </Card.Root>
-
-            <Card.Root maxWidth={{ sm: '100%', md: '100%', lg: '300px' }}>
-                <Card.Body gap="2">
-                    <Avatar.Root size="lg" shape="rounded">
-                        <Avatar.Image src="/lenovo-logo.jpg" objectFit={'cover'} />
-                        <Avatar.Fallback name="Lenovo" />
-                    </Avatar.Root>
-                    <Card.Title mt="2">{lenovoCard.title}</Card.Title>
-                    <Card.Description>
-                        <strong>{lenovoCard.descriptionTitle}</strong>
-                    </Card.Description>
-                    <Card.Description>
-                        {lenovoCard.description}
-                    </Card.Description>
-                </Card.Body>
-
-                <Card.Footer justifyContent="flex-end">
-                    <Button onClick={() => lenovoDialogOpen(true)}>Read more</Button>
-                </Card.Footer>
-            </Card.Root>
-
-            <Card.Root maxWidth={{ sm: '100%', md: '100%', lg: '300px' }}>
-                <Card.Body gap="2">
-                    <Avatar.Root size="lg" shape="rounded">
-                        <Avatar.Image src="/seip7-logo.jpg" objectFit={'cover'} />
-                        <Avatar.Fallback name="Seip7" />
-                    </Avatar.Root>
-                    <Card.Title mt="2">{seipCard.title}</Card.Title>
-                    <Card.Description>
-                        <strong>{seipCard.descriptionTitle}</strong>
-                    </Card.Description>
-                    <Card.Description>
-                        {seipCard.description}
-                    </Card.Description>
-                </Card.Body>
-
-                <Card.Footer justifyContent="flex-end">
-                    <Button onClick={() => seipDialogOpen(true)}>Read more</Button>
-                </Card.Footer>
-            </Card.Root> */}
         </Grid>
     )
 }
